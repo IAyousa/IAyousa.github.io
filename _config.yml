@@ -1,13 +1,13 @@
 # Hexo 站点配置
 # 文档：https://hexo.io/zh-cn/docs/configuration.html
 
-## 站点身份（#13 占位符，随时可改，不影响文章）
+## 站点身份（素材来源：GitHub 公开资料 github.com/IAyousa）
 ## 注意：这些是 Hexo 的顶层键，不能嵌套（嵌进 site: 会被静默忽略回退默认值）
-title: Yao 的博客
+title: Yao Xuan 的博客
 subtitle: 记录生活、学习与技术
-description: 个人博客：日常生活、学习体会、技术知识总结
-keywords: blog,生活,学习,技术
-author: Yao
+description: 石家庄铁道大学在读学生。记录日常生活、学习体会、技术知识总结。
+keywords: blog,Yao Xuan,生活,学习,技术
+author: Yao Xuan
 language: zh-CN
 timezone: Asia/Shanghai
 

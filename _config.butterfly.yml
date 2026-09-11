@@ -46,17 +46,16 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
-  # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
+  fab fa-github: https://github.com/IAyousa || GitHub || '#24292e'
 
 # --------------------------------------
 # Image Settings
 # --------------------------------------
 
-favicon: /img/favicon.png
+favicon: /images/favicon.png
 
 avatar:
-  img: /img/butterfly-icon.png
+  img: /images/avatar.jpg
   effect: false
 
 # Disable all banner images
@@ -284,15 +283,15 @@ aside:
     category: true
   card_author:
     enable: true
-    description:
+    description: 石家庄铁道大学 · 在读学生
     button:
-      enable: false   # 站点身份落定后开启并回填 GitHub 主页链接（共识 #13）
+      enable: true
       icon: fab fa-github
-      text: Follow Me
-      link:
+      text: GitHub
+      link: https://github.com/IAyousa
   card_announcement:
     enable: true
-    content: 欢迎来到我的博客
+    content: 欢迎来到 Yao Xuan 的博客
   card_recent_post:
     enable: true
     # If set 0 will show all
