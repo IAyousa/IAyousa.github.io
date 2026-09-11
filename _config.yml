@@ -51,15 +51,13 @@ abbrlink:
   alg: crc32
   rep: hex
 
-## RSS（共识 #20a）
+## RSS（共识 #20a）：全文输出，不截断
 feed:
   enable: true
   type: atom
   path: atom.xml
   limit: 20
   content: true
-  content_limit: 140
-  content_limit_delim: ' '
 
 ## 本地搜索索引（共识 #15）：Butterfly 的 local search 消费此文件
 search:

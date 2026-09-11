@@ -29,6 +29,6 @@ npx hexo new "文章标题"  # 在 source/_posts/ 生成 Markdown 文件
 
 ## 关于本站
 
-- 评论基于 GitHub Discussions（Giscus），用 GitHub 账号登录即可留言
+- 评论基于 GitHub Discussions（Giscus），用 GitHub 账号登录即可评论
 - 文章采用 [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) 协议授权
 - 站点搭建过程记录在仓库的 `docs/dev-log/` 目录，供日后复盘

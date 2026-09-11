@@ -10,9 +10,11 @@
 
 ```bash
 npm install        # 首次
-npx hexo new "文章标题"   # 在 source/_posts/ 生成草稿文件
+npx hexo new "文章标题"   # 在 source/_posts/ 生成文章文件
 npm run server     # 预览 http://localhost:4000
 ```
+
+暂不想公开的内容用草稿写：`npx hexo new draft "标题"` 写进 `source/_drafts/`（构建时不产出页面），`npx hexo server --draft` 本地预览，`npx hexo publish "标题"` 转正为文章。
 
 写完 front-matter 里的 `categories`（生活/学习/技术）和 `tags`，配图放 `source/images/`、正文用 `/images/文件名` 引用。满意后：
 
