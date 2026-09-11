@@ -11,3 +11,6 @@ npm-debug.log*
 *.log
 .DS_Store
 Thumbs.db
+
+# 向导记录文件（值都在配置文件里，无需入库）
+.env

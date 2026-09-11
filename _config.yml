@@ -11,8 +11,8 @@ author: Yao
 language: zh-CN
 timezone: Asia/Shanghai
 
-## URL（占位：建仓时替换 yourusername 为真实 GitHub 用户名）
-url: https://yourusername.github.io/
+## URL（占位：建仓时替换 IAyousa 为真实 GitHub 用户名）
+url: https://IAyousa.github.io/
 permalink: posts/:abbrlink/
 permalink_defaults:
 pretty_urls:
