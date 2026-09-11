@@ -3,11 +3,11 @@
 
 ## 站点身份（素材来源：GitHub 公开资料 github.com/IAyousa）
 ## 注意：这些是 Hexo 的顶层键，不能嵌套（嵌进 site: 会被静默忽略回退默认值）
-title: Yao Xuan 的博客
+title: IAyousa的博客
 subtitle: 记录生活、学习与技术
-description: 石家庄铁道大学在读学生。记录日常生活、学习体会、技术知识总结。
-keywords: blog,Yao Xuan,生活,学习,技术
-author: Yao Xuan
+description: 记录日常生活、学习体会、技术知识总结。
+keywords: blog,生活,学习,技术
+author: IAyousa
 language: zh-CN
 timezone: Asia/Shanghai
 

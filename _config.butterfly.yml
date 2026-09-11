@@ -283,7 +283,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: 石家庄铁道大学 · 在读学生
+    description: 一个菜鸡CS专业学生，目前正在不断修炼成长
     button:
       enable: true
       icon: fab fa-github
@@ -291,7 +291,7 @@ aside:
       link: https://github.com/IAyousa
   card_announcement:
     enable: true
-    content: 欢迎来到 Yao Xuan 的博客
+    content: 欢迎来到 IAyousa 的博客
   card_recent_post:
     enable: true
     # If set 0 will show all
