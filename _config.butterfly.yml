@@ -761,20 +761,21 @@ site_verification:
 
 # Theme color for customize
 # Notice: color value must in double quotes like "#000" or may cause error!
-# 品牌色：辉光管琥珀色系（图标琥珀 #F59E0B 为暗底发光色，站点主色深化一档到 #D97706 保证浅色底对比度；见 tools/generate-icons.mjs 与 docs/dev-log/09）
+# 品牌色：黑白配——近黑 #1C1C1E（与图标炭黑面板同源），正文区维持浅色不变
+# 顶部导航条的黑色半透明不在这里（主题把它的白色硬编码在 head.styl），走 source/css/custom.css
 # 注意：这里每个键不设置都会回退到主题的蓝色系默认值，所以用到的键全部显式写出
 
 theme_color:
   enable: true
-  main: "#D97706"
-  paginator: "#D97706"
-  button_hover: "#F59E0B"
-  text_selection: "#FDE68A"
-  link_color: "#D97706"
-  hr_color: "#D97706"
-  toc_color: "#D97706"
-  blockquote_padding_color: "#D97706"
-  scrollbar_color: "#D97706"
+  main: "#1C1C1E"
+  paginator: "#1C1C1E"
+  button_hover: "#4A4A50"
+  text_selection: "#E2E2E7"
+  link_color: "#1C1C1E"
+  hr_color: "#D9D9DE"
+  toc_color: "#1C1C1E"
+  blockquote_padding_color: "#1C1C1E"
+  scrollbar_color: "#1C1C1E"
   meta_theme_color_light: "ffffff"
   meta_theme_color_dark: "#1C1C1E"
 
@@ -1058,6 +1059,7 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    - <link rel="stylesheet" href="/css/custom.css">
     # 多尺寸 favicon（上面的 favicon: 只产出一条 shortcut icon，见 docs/dev-log/09）
     - <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     - <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">

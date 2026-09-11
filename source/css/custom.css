@@ -1,0 +1,47 @@
+/* =========================================================
+   自定义样式（经 _config.butterfly.yml 的 inject.head 注入）
+   黑白配主题：顶部导航条黑色半透明，正文区域维持浅色不变
+   设计记录：docs/dev-log/10-theme-black-white.md
+   ========================================================= */
+
+/* 顶部 60px 导航条（无 banner 时的 not-top-img 形态）：
+   主题硬编码为白色半透明，这里覆盖为黑色半透明 */
+#page-header.not-top-img #nav {
+  background: rgba(28, 28, 30, 0.8);
+  box-shadow: 0 5px 6px -5px rgba(0, 0, 0, 0.5);
+}
+
+/* 黑底上的导航文字与图标改浅色（原主题深色文字不可读） */
+#page-header.not-top-img #nav a,
+#page-header.not-top-img #nav span.site-page,
+#page-header.not-top-img #nav .site-name,
+#page-header.not-top-img #nav #toggle-menu {
+  color: #F5F5F7;
+  text-shadow: none;
+}
+
+#page-header.not-top-img #nav a:hover,
+#page-header.not-top-img #nav span.site-page:hover {
+  color: #C9C9CE;
+}
+
+/* 下滑隐藏、上滑出现的吸顶导航：同款黑色半透明；
+   毛玻璃 backdrop-filter 沿用主题自带的 blur(7px) */
+#page-header.nav-fixed #nav {
+  background: rgba(28, 28, 30, 0.8);
+}
+
+#page-header.nav-fixed #nav a,
+#page-header.nav-fixed #nav span.site-page,
+#page-header.nav-fixed #nav .site-name,
+#page-header.nav-fixed #nav #blog-info,
+#page-header.nav-fixed #nav #toggle-menu {
+  color: #F5F5F7;
+  text-shadow: none;
+}
+
+#page-header.nav-fixed #nav #blog-info:hover,
+#page-header.nav-fixed #nav a:hover,
+#page-header.nav-fixed #nav span.site-page:hover {
+  color: #C9C9CE;
+}
