@@ -38,14 +38,23 @@ git add -A && git commit -m "改了什么" && git push    # 4. 一分钟后线�
 |---|---|---|
 | 站名/副标题/作者/站点描述（SEO） | `_config.yml` | 顶部 `title / subtitle / description / author`——**顶层键，千万别嵌套** |
 | 头像 | `_config.butterfly.yml` | `avatar: img:` → `/images/avatar.jpg` |
-| 浏览器标签页图标（favicon） | 同上 | `favicon: /images/favicon.png` |
+| 浏览器标签页图标（favicon） | 同上 | `favicon: /images/favicon.ico` + `inject.head` 多尺寸标签（见下方实操） |
 | 侧栏作者卡简介 | 同上 | `aside.card_author.description` |
 | 侧栏 GitHub 按钮 | 同上 | `aside.card_author.button`（enable/text/link） |
 | 导航栏社交图标 | 同上 | `social:` 一行一个：`图标: 链接 \|\| 名称 \|\| 颜色` |
 | 公告卡 | 同上 | `aside.card_announcement.content` |
 | 页脚建站年份 | 同上 | `footer.owner.since` |
 
-**头像与 favicon 实操**：把图片放进 `source/images/`（本仓库配图集中地的既定约定，ADR-0004），文章/配置里用 `/images/文件名` 引用（站点在根路径，绝对路径本地和生产行为一致）。favicon 必须是 PNG（浏览器不支持 jpeg 图标），本站是从头像缩放出 64×64 生成的；你想换图标，任何 64×64 PNG 放进去改 `favicon:` 一行即可。
+**头像与 favicon 实操**：把图片放进 `source/images/`（本仓库配图集中地的既定约定，ADR-0004），文章/配置里用 `/images/文件名` 引用（站点在根路径，绝对路径本地和生产行为一致）。
+
+favicon 现在是一套"命运石之门沙漏"图标体系，由 `tools/generate-icons.mjs` 从同一份图形源一键生成：`favicon.svg`（矢量版，现代浏览器优先用）+ `favicon-16/32.png` + `favicon.ico`（16/32/48 三合一，`favicon:` 指向它）+ `apple-touch-icon.png`（180×180 全出血方形，iOS 加主屏时自动裁圆角），多尺寸 `<link>` 标签由 `inject.head` 注入；另在 `source/favicon.ico` 放了一份站点根路径副本（照顾 `/favicon.ico` 的老惯例，是 ADR-0004"图片进 images/"的一个登记在案的例外）。想换图标：改脚本里的图形源后重跑
+
+```bash
+npm i --no-save sharp                          # 栅格化依赖，--no-save 不动 package.json
+node tools/generate-icons.mjs --variant=meter # 可选 classic / meter / minimal
+```
+
+设计过程与配色依据见 dev-log 09。
 
 ⚠️ **本仓库踩过的最大的坑**（开发日志 05）：Hexo 的站点身份必须是**顶层键**。写成
 
@@ -138,7 +147,7 @@ top: 1                 # 可选：置顶，数字越小越靠前
 | 想要的效果 | 找哪个配置 | 怎么改 |
 |---|---|---|
 | 首页打字机副标题 | `subtitle:` | `enable: true`，`sub` 里每行一句；`source: 1` 可接一言 API |
-| 主题配色 | `theme_color:` | 取消注释，改 `main` 的色值（十六进制，**必须带双引号**） |
+| 主题配色 | `theme_color:` | 本站已启用（辉光管琥珀，与 favicon 同源）；改色就改块内色值（十六进制，**必须带双引号**）。⚠️ 块内没写的键会回退成主题默认的蓝色系，不是"不生效" |
 | 暗色模式 | `darkmode:` | 已默认开；`autoChangeMode: 1` 可跟随系统 |
 | 首页卡片布局 | `index_layout:` | 1~7 七种排法，改数字刷新即见 |
 | 网站背景 | `background:` | 纯色或 `/images/xx.jpg`；数组则每次随机一张 |
