@@ -1,0 +1,84 @@
+# Hexo 站点配置
+# 文档：https://hexo.io/zh-cn/docs/configuration.html
+
+## 站点身份（#13 占位符，随时可改，不影响文章）
+## 注意：这些是 Hexo 的顶层键，不能嵌套（嵌进 site: 会被静默忽略回退默认值）
+title: Yao 的博客
+subtitle: 记录生活、学习与技术
+description: 个人博客：日常生活、学习体会、技术知识总结
+keywords: blog,生活,学习,技术
+author: Yao
+language: zh-CN
+timezone: Asia/Shanghai
+
+## URL（占位：建仓时替换 yourusername 为真实 GitHub 用户名）
+url: https://yourusername.github.io/
+permalink: posts/:abbrlink/
+permalink_defaults:
+pretty_urls:
+  trailing_index: true
+  trailing_html: true
+
+## 目录
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+## 文章
+new_post_name: :title.md
+default_layout: post
+titlecase: false
+external_link:
+  enable: true
+  field: site
+  exclude: ''
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+syntax_highlighter: highlight.js
+
+## 永久链接（ADR-0003）：crc32+hex → /posts/8位十六进制/
+## ID 由标题+日期哈希确定性生成：本地首次构建后写进文章 front-matter 并提交，
+## CI 重建得到相同 URL，无需在 CI 里回写仓库
+abbrlink:
+  alg: crc32
+  rep: hex
+
+## RSS（共识 #20a）
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  content: true
+  content_limit: 140
+  content_limit_delim: ' '
+
+## 本地搜索索引（共识 #15）：Butterfly 的 local search 消费此文件
+search:
+  path: search.json
+  field: post
+  format: html
+  limit: 10000
+  content: true
+
+## 主题（#7 Butterfly；覆盖配置见 _config.butterfly.yml）
+theme: butterfly
+
+## 格式
+meta_generator: true
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+include:
+exclude:
+ignore:
+
+## 部署：GitHub Actions 构建 + deploy-pages 发布（ADR-0002），不用 hexo deploy

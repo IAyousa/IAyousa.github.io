@@ -1,0 +1,13 @@
+# 构建产物与缓存（ADR-0002：main 只放源码，生成物永不入库）
+public/
+db.json
+.deploy_git/
+
+# 依赖
+node_modules/
+
+# 日志与系统文件
+npm-debug.log*
+*.log
+.DS_Store
+Thumbs.db
